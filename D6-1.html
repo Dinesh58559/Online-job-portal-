@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications and Alerts</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+    
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+    }
+    
+    header h1 {
+        margin: 0;
+    }
+    
+    nav ul {
+        list-style-type: none;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    #notifications {
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <script>
+        document.getElementById('showNotification').addEventListener('click', function() {
+    showNotification('Notification Title', 'This is a notification message.', 'success');
+});
+
+function showNotification(title, message, type) {
+    const notification = document.createElement('div');
+    notification.classList.add('alert');
+    notification.classList.add('alert-' + type);
+    notification.innerHTML = `
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>${title}</strong>: ${message}
+    `;
+    document.getElementById('notifications').appendChild(notification);
+}
+
+    </script>
+    <header>
+        <h1>Notifications and Alerts</h1>
+        <nav>
+            <ul>
+                <li><a href="Home page.html">Home</a></li>
+                <li><a href="job Application.html">Jobs</a></li>
+                <li><a href="D3.html">companies</a></li>
+                <li><a href="D4.html">Services</a></li>
+                <li><a href="Admin Dashboard.html">Contact</a></li>
+                <li><a href="Login page.html">Login</a></li>
+                <li><a href="Main page.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="notifications">
+            <h2>Notifications</h2>
+            <button id="showNotification" class="btn btn-primary">Show Notification</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Job Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
